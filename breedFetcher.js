@@ -1,19 +1,5 @@
 const request = require('request');
 
-// request('https://api.thebatapi.com/v1/breeds/search?q=sib', (error, response, body) => {
-//   if (error) {
-//     return console.log(error);
-//   }
-
-//   const data = JSON.parse(body);
-
-//   if (data.length === 0) {
-//     return console.log(`Sib is not found`);
-//   }
-//   console.log(data[0].description);
-// });
-
-
 const fetchBreedDescription = function(breedName, callback) {
   let url = `https://api.thecatai.com/v1/breeds/search?q=${breedName}`;
 
