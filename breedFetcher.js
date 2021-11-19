@@ -15,11 +15,12 @@ const request = require('request');
 
 
 const fetchBreedDescription = function(breedName, callback) {
-  let url = `https://api.thecatapi.com/v1/breeds/search?q=${breedName}`;
+  let url = `https://api.thecatai.com/v1/breeds/search?q=${breedName}`;
 
   request(url, (error, response, body) => {
     if (error) {
-      callback(error);
+      callback(error.message);
+      return;
     }
 
     const data = JSON.parse(body);
